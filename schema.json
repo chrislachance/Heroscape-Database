@@ -170,18 +170,27 @@
           "sqlite_affinity": "NONE"
         },
         {
-          "name": "ability_1",
+          "name": "ability_name_1",
           "source_column": 19,
-          "source_header": "Ability 1",
+          "source_header": "Ability name 1",
           "observed_types": {
             "str": 366
           },
           "sqlite_affinity": "NONE"
         },
         {
-          "name": "ability_2",
+          "name": "ability_description_1",
           "source_column": 20,
-          "source_header": "Ability 2",
+          "source_header": "Ability description 1",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "ability_name_2",
+          "source_column": 21,
+          "source_header": "Ability name 2",
           "observed_types": {
             "str": 309,
             "NoneType": 57
@@ -189,9 +198,19 @@
           "sqlite_affinity": "NONE"
         },
         {
-          "name": "ability_3",
-          "source_column": 21,
-          "source_header": "Ability 3",
+          "name": "ability_description_2",
+          "source_column": 22,
+          "source_header": "Ability description 2",
+          "observed_types": {
+            "str": 308,
+            "NoneType": 58
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "ability_name_3",
+          "source_column": 23,
+          "source_header": "Ability name 3",
           "observed_types": {
             "str": 151,
             "NoneType": 215
@@ -199,9 +218,19 @@
           "sqlite_affinity": "NONE"
         },
         {
-          "name": "ability_4",
-          "source_column": 22,
-          "source_header": "Ability 4",
+          "name": "ability_description_3",
+          "source_column": 24,
+          "source_header": "Ability description 3",
+          "observed_types": {
+            "str": 146,
+            "NoneType": 220
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "ability_name_4",
+          "source_column": 25,
+          "source_header": "Ability name 4",
           "observed_types": {
             "NoneType": 352,
             "str": 14
@@ -209,8 +238,18 @@
           "sqlite_affinity": "NONE"
         },
         {
+          "name": "ability_description_4",
+          "source_column": 26,
+          "source_header": "Ability description 4",
+          "observed_types": {
+            "NoneType": 354,
+            "str": 12
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
           "name": "purchase_link_all_things_heroscape",
-          "source_column": 23,
+          "source_column": 27,
           "source_header": "Purchase link - All Things Heroscape",
           "observed_types": {
             "str": 364,
@@ -220,7 +259,7 @@
         },
         {
           "name": "purchase_link_renegade_game_studios_painted",
-          "source_column": 24,
+          "source_column": 28,
           "source_header": "Purchase link - Renegade Game Studios (painted)",
           "observed_types": {
             "NoneType": 213,
@@ -230,7 +269,7 @@
         },
         {
           "name": "purchase_link_renegade_game_studios_unpainted",
-          "source_column": 25,
+          "source_column": 29,
           "source_header": "Purchase link - Renegade Game Studios (unpainted)",
           "observed_types": {
             "NoneType": 226,
@@ -240,7 +279,7 @@
         },
         {
           "name": "more_information",
-          "source_column": 26,
+          "source_column": 30,
           "source_header": "More information",
           "observed_types": {
             "str": 342,
@@ -249,8 +288,8 @@
           "sqlite_affinity": "NONE"
         },
         {
-          "name": "column_27",
-          "source_column": 27,
+          "name": "column_31",
+          "source_column": 31,
           "source_header": null,
           "observed_types": {
             "NoneType": 366

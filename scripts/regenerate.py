@@ -77,7 +77,7 @@ def main():
     db.commit()
     (ROOT/'schema.sql').write_text('\n'.join(row[0]+';' for row in db.execute("SELECT sql FROM sqlite_master WHERE type='table' ORDER BY name"))+'\n')
     db.close(); dump(ROOT/'schema.json',schema); dump(ROOT/'validation.json',{'sqlite_integrity':'ok','foreign_keys':'ok','sheets':reports})
-    files = sorted(p for p in ROOT.rglob('*') if p.is_file() and p.name!='manifest.sha256' and '__pycache__' not in p.parts)
+    files = sorted(p for p in ROOT.rglob('*') if p.is_file() and p.name!='manifest.sha256' and not {'.git', '__pycache__'}.intersection(p.relative_to(ROOT).parts))
     (ROOT/'manifest.sha256').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+str(p.relative_to(ROOT))+'\n' for p in files))
     print(json.dumps(reports,indent=2))
 if __name__=='__main__': main()
