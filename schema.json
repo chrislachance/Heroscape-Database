@@ -1,0 +1,263 @@
+{
+  "version": 1,
+  "tables": [
+    {
+      "name": "units",
+      "source_sheet_id": 2046690831,
+      "source_sheet_title": "Units",
+      "primary_key": "source_row",
+      "columns": [
+        {
+          "name": "unit_name",
+          "source_column": 1,
+          "source_header": "Unit Name",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "type",
+          "source_column": 2,
+          "source_header": "Type",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "uniqueness",
+          "source_column": 3,
+          "source_header": "Uniqueness",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "manufacturer",
+          "source_column": 4,
+          "source_header": "Manufacturer",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "set_wave",
+          "source_column": 5,
+          "source_header": "Set / Wave",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "valkyrie",
+          "source_column": 6,
+          "source_header": "Valkyrie",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "species",
+          "source_column": 7,
+          "source_header": "Species",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "class",
+          "source_column": 8,
+          "source_header": "Class",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "personality",
+          "source_column": 9,
+          "source_header": "Personality",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "size",
+          "source_column": 10,
+          "source_header": "Size",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "height",
+          "source_column": 11,
+          "source_header": "Height",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "figures",
+          "source_column": 12,
+          "source_header": "Figures",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "cost",
+          "source_column": 13,
+          "source_header": "Cost",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "life",
+          "source_column": 14,
+          "source_header": "Life",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "move",
+          "source_column": 15,
+          "source_header": "Move",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "range",
+          "source_column": 16,
+          "source_header": "Range",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "attack",
+          "source_column": 17,
+          "source_header": "Attack",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "defense",
+          "source_column": 18,
+          "source_header": "Defense",
+          "observed_types": {
+            "int": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "ability_1",
+          "source_column": 19,
+          "source_header": "Ability 1",
+          "observed_types": {
+            "str": 366
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "ability_2",
+          "source_column": 20,
+          "source_header": "Ability 2",
+          "observed_types": {
+            "str": 309,
+            "NoneType": 57
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "ability_3",
+          "source_column": 21,
+          "source_header": "Ability 3",
+          "observed_types": {
+            "str": 151,
+            "NoneType": 215
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "ability_4",
+          "source_column": 22,
+          "source_header": "Ability 4",
+          "observed_types": {
+            "NoneType": 352,
+            "str": 14
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "purchase_link_all_things_heroscape",
+          "source_column": 23,
+          "source_header": "Purchase link - All Things Heroscape",
+          "observed_types": {
+            "str": 364,
+            "NoneType": 2
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "purchase_link_renegade_game_studios_painted",
+          "source_column": 24,
+          "source_header": "Purchase link - Renegade Game Studios (painted)",
+          "observed_types": {
+            "NoneType": 213,
+            "str": 153
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "purchase_link_renegade_game_studios_unpainted",
+          "source_column": 25,
+          "source_header": "Purchase link - Renegade Game Studios (unpainted)",
+          "observed_types": {
+            "NoneType": 226,
+            "str": 140
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "more_information",
+          "source_column": 26,
+          "source_header": "More information",
+          "observed_types": {
+            "str": 342,
+            "NoneType": 24
+          },
+          "sqlite_affinity": "NONE"
+        },
+        {
+          "name": "column_27",
+          "source_column": 27,
+          "source_header": null,
+          "observed_types": {
+            "NoneType": 366
+          },
+          "sqlite_affinity": "NONE"
+        }
+      ]
+    }
+  ]
+}

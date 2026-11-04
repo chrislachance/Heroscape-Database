@@ -1,0 +1,16 @@
+{
+  "sqlite_integrity": "ok",
+  "foreign_keys": "ok",
+  "sheets": [
+    {
+      "sheet": "Units",
+      "captured_rows_including_header_and_blanks": 997,
+      "columns": 27,
+      "exported_records": 366,
+      "omitted_blank_data_rows": 630,
+      "formulas": 0,
+      "error_cells": 0,
+      "csv_json_sqlite_roundtrip": "passed"
+    }
+  ]
+}
