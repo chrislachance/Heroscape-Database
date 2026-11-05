@@ -1,14 +1,14 @@
 {
-  "release_version": "1.0.1",
+  "release_version": "1.0.2",
   "sqlite_integrity": "ok",
   "foreign_keys": "ok",
   "sheets": [
     {
       "sheet": "Units",
-      "captured_rows_including_header_and_blanks": 997,
+      "captured_rows_including_header_and_blanks": 367,
       "columns": 31,
       "exported_records": 366,
-      "omitted_blank_data_rows": 630,
+      "omitted_blank_data_rows": 0,
       "formulas": 0,
       "error_cells": 0,
       "csv_json_sqlite_roundtrip": "passed"
