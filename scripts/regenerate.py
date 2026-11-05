@@ -18,6 +18,9 @@ def main():
         p = sheet['properties']; grids[p['sheetId']] = (p, {})
     for path in sorted((ROOT/'source').glob('cells_*.json')):
         capture = json.loads(path.read_text())
+        bounds = re.search(r'![A-Z]+(\d+):[A-Z]+(\d+)$', capture['requestedRange'])
+        assert bounds, 'Unrecognized capture range'
+        capture_start, capture_end = map(int, bounds.groups())
         for sheet in capture['response']['sheets']:
             p, rows = grids[sheet['properties']['sheetId']]
             for block in sheet.get('data', []):
@@ -25,12 +28,16 @@ def main():
                     rn = block.get('startRow', 0) + offset + 1
                     assert rn not in rows, 'Overlapping capture'
                     rows[rn] = row.get('values', [])
+            # Sheets omits trailing blank rows from bounded CellData responses.
+            for rn in range(capture_start, capture_end+1):
+                rows.setdefault(rn, [])
     dbpath = ROOT/'heroscape.sqlite'
     if dbpath.exists(): dbpath.unlink()
     db = sqlite3.connect(dbpath)
     db.execute('PRAGMA foreign_keys=ON')
     db.executescript('CREATE TABLE source_sheets(sheet_id INTEGER PRIMARY KEY,title TEXT NOT NULL,row_count INTEGER NOT NULL,column_count INTEGER NOT NULL); CREATE TABLE source_cells(sheet_id INTEGER NOT NULL REFERENCES source_sheets(sheet_id),source_row INTEGER NOT NULL CHECK(source_row>0),source_column INTEGER NOT NULL CHECK(source_column>0),cell_json TEXT NOT NULL,PRIMARY KEY(sheet_id,source_row,source_column));')
-    schema = {'version': 1, 'tables': []}; reports = []
+    release_version = (ROOT/'VERSION').read_text().strip()
+    schema = {'version': 1, 'release_version': release_version, 'tables': []}; reports = []
     for sid, (p, rows) in grids.items():
         height = p['gridProperties']['rowCount']; width = p['gridProperties']['columnCount']
         assert set(rows) == set(range(1, height+1)), 'Incomplete grid capture'
@@ -76,7 +83,7 @@ def main():
     assert not db.execute('PRAGMA foreign_key_check').fetchall()
     db.commit()
     (ROOT/'schema.sql').write_text('\n'.join(row[0]+';' for row in db.execute("SELECT sql FROM sqlite_master WHERE type='table' ORDER BY name"))+'\n')
-    db.close(); dump(ROOT/'schema.json',schema); dump(ROOT/'validation.json',{'sqlite_integrity':'ok','foreign_keys':'ok','sheets':reports})
+    db.close(); dump(ROOT/'schema.json',schema); dump(ROOT/'validation.json',{'release_version':release_version,'sqlite_integrity':'ok','foreign_keys':'ok','sheets':reports})
     files = sorted(p for p in ROOT.rglob('*') if p.is_file() and p.name!='manifest.sha256' and not {'.git', '__pycache__'}.intersection(p.relative_to(ROOT).parts))
     (ROOT/'manifest.sha256').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+str(p.relative_to(ROOT))+'\n' for p in files))
     print(json.dumps(reports,indent=2))
